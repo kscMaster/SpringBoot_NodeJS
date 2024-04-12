@@ -1,0 +1,860 @@
+[
+  {
+    "interfaceName": "修改设备台账",
+    "serverName": "设备管理-设备台账",
+    "interfaceUrl": "/nancal-app-facility/ledger/update",
+    "method": "POST",
+    "groupId": "1427201476868243458",
+    "isCross": true,
+    "version": "1.0",
+    "requestType": "application/json",
+    "responseType": "",
+    "description": "",
+    "requestBody": {
+      "root": {
+        "type": "object",
+        "properties": {
+          "accuracy": {
+            "type": "string",
+            "description": "精度"
+          },
+          "activationDate": {
+            "type": "string",
+            "format": "date",
+            "description": "启用日期"
+          },
+          "appId": {
+            "type": "string",
+            "description": "应用ID"
+          },
+          "contact": {
+            "type": "string",
+            "description": "联系方式"
+          },
+          "createAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "创建时间"
+          },
+          "createBy": {
+            "type": "string",
+            "description": "创建者ID"
+          },
+          "deleted": {
+            "type": "integer",
+            "format": "int32",
+            "description": "是否删除"
+          },
+          "deviceFiles": {
+            "type": "array",
+            "description": "设备文件",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "bizId": {
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "category": {
+                    "type": "string"
+                  },
+                  "createAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "创建时间"
+                  },
+                  "createBy": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "创建者"
+                  },
+                  "deleted": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "逻辑删除标记  0-未删除  1-已删除"
+                  },
+                  "id": {
+                    "type": "string",
+                    "description": "主键ID"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "scene": {
+                    "type": "string"
+                  },
+                  "updateAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "更新时间"
+                  },
+                  "updateBy": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "更新者"
+                  },
+                  "uuid": {
+                    "type": "string"
+                  }
+                },
+                "title": "DeviceFiles",
+                "ref": "#/definitions/DeviceFiles"
+              }
+            }
+          },
+          "deviceModel": {
+            "type": "string",
+            "description": "设备型号"
+          },
+          "deviceName": {
+            "type": "string",
+            "description": "设备名称"
+          },
+          "deviceNum": {
+            "type": "string",
+            "description": "设备编号"
+          },
+          "deviceStatus": {
+            "type": "string",
+            "description": "设备状态"
+          },
+          "deviceType": {
+            "type": "string",
+            "description": "设备类型"
+          },
+          "factoryDate": {
+            "type": "string",
+            "format": "date",
+            "description": "出厂日期"
+          },
+          "factoryNum": {
+            "type": "string",
+            "description": "出厂编号"
+          },
+          "id": {
+            "type": "string",
+            "example": 0,
+            "description": "ID"
+          },
+          "manufacturer": {
+            "type": "string",
+            "description": "制造厂家"
+          },
+          "remark": {
+            "type": "string",
+            "description": "备注"
+          },
+          "tenantId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "租户ID"
+          },
+          "updateAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "更新时间"
+          },
+          "updateBy": {
+            "type": "string",
+            "description": "更新者ID"
+          }
+        },
+        "title": "设备台账",
+        "ref": "#/definitions/设备台账"
+      }
+    },
+    "requestQuery": [],
+    "requestHeader": [],
+    "responseBody": {
+      "root": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32",
+            "example": "成功返回0",
+            "description": "响应码"
+          },
+          "data": {
+            "type": "boolean",
+            "description": "响应对象"
+          },
+          "msg": {
+            "type": "string",
+            "description": "错误消息，没有错误返回空串"
+          }
+        },
+        "title": "MvcResult«boolean»",
+        "ref": "#/definitions/MvcResult«boolean»"
+      }
+    },
+    "responseSuccess": "",
+    "responseError": "",
+    "publishStatus": false,
+    "apiStatus": false,
+    "onlineStatus": false,
+    "type": "system",
+    "model": {
+      "id": "",
+      "name": ""
+    },
+    "params": [],
+    "function": "",
+    "id": "1427196538038685697",
+    "createAt": "2021-08-16 17:55:37",
+    "updateAt": "2021-08-16 17:12:25"
+  },
+  {
+    "interfaceName": "分页获取设备台账列表",
+    "serverName": "设备管理-设备台账",
+    "interfaceUrl": "/nancal-app-facility/ledger/list",
+    "method": "POST",
+    "groupId": "1427201476868243458",
+    "isCross": true,
+    "version": "1.0",
+    "requestType": "application/json",
+    "responseType": "",
+    "description": "",
+    "requestBody": {
+      "root": {
+        "type": "object",
+        "required": [
+          "order",
+          "pageNo",
+          "pageSize",
+          "query"
+        ],
+        "properties": {
+          "order": {
+            "type": "object",
+            "description": "排序",
+            "additionalProperties": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "pageNo": {
+            "type": "integer",
+            "format": "int32",
+            "example": 1,
+            "description": "分页页码"
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32",
+            "example": 10,
+            "description": "分页大小"
+          },
+          "query": {
+            "type": "object",
+            "properties": {
+              "accuracyGte": {
+                "type": "string",
+                "description": "精度 大于等于"
+              },
+              "accuracyLte": {
+                "type": "string",
+                "description": "精度 小于等于"
+              },
+              "deviceModel": {
+                "type": "string",
+                "description": "设备型号"
+              },
+              "deviceName": {
+                "type": "string",
+                "description": "设备名称"
+              },
+              "deviceNum": {
+                "type": "string",
+                "description": "设备编号"
+              },
+              "deviceStatus": {
+                "type": "string",
+                "description": "设备状态"
+              },
+              "deviceType": {
+                "type": "string",
+                "description": "设备类型"
+              },
+              "factoryDateEnd": {
+                "type": "string",
+                "format": "date",
+                "description": "出厂时间 结束 yyyy-MM-dd"
+              },
+              "factoryDateStart": {
+                "type": "string",
+                "format": "date",
+                "description": "出厂时间 开始 yyyy-MM-dd"
+              },
+              "factoryNum": {
+                "type": "string",
+                "description": "出厂编号"
+              },
+              "ids": {
+                "type": "array",
+                "description": "设备台账ID集合",
+                "items": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              },
+              "manufacturer": {
+                "type": "string",
+                "description": "制造厂家"
+              }
+            },
+            "title": "设备台账查询条件",
+            "ref": "#/definitions/设备台账查询条件"
+          }
+        },
+        "title": "MvcListRequest«设备台账查询条件»",
+        "ref": "#/definitions/MvcListRequest«设备台账查询条件»"
+      }
+    },
+    "requestQuery": [],
+    "requestHeader": [],
+    "responseBody": {
+      "root": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32",
+            "example": "成功返回0",
+            "description": "响应码"
+          },
+          "data": {
+            "type": "array",
+            "description": "列表",
+            "items": {
+              "type": "object",
+              "properties": {
+                "accuracy": {
+                  "type": "string",
+                  "description": "精度"
+                },
+                "activationDate": {
+                  "type": "string",
+                  "format": "date",
+                  "description": "启用日期"
+                },
+                "appId": {
+                  "type": "string",
+                  "description": "应用ID"
+                },
+                "contact": {
+                  "type": "string",
+                  "description": "联系方式"
+                },
+                "createAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "创建时间"
+                },
+                "createBy": {
+                  "type": "string",
+                  "description": "创建者ID"
+                },
+                "deleted": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "是否删除"
+                },
+                "deviceFiles": {
+                  "type": "array",
+                  "description": "设备文件",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "bizId": {
+                          "type": "integer",
+                          "format": "int64"
+                        },
+                        "category": {
+                          "type": "string"
+                        },
+                        "createAt": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "创建时间"
+                        },
+                        "createBy": {
+                          "type": "integer",
+                          "format": "int64",
+                          "description": "创建者"
+                        },
+                        "deleted": {
+                          "type": "integer",
+                          "format": "int32",
+                          "description": "逻辑删除标记  0-未删除  1-已删除"
+                        },
+                        "id": {
+                          "type": "string",
+                          "description": "主键ID"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "scene": {
+                          "type": "string"
+                        },
+                        "updateAt": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "更新时间"
+                        },
+                        "updateBy": {
+                          "type": "integer",
+                          "format": "int64",
+                          "description": "更新者"
+                        },
+                        "uuid": {
+                          "type": "string"
+                        }
+                      },
+                      "title": "DeviceFiles",
+                      "ref": "#/definitions/DeviceFiles"
+                    }
+                  }
+                },
+                "deviceModel": {
+                  "type": "string",
+                  "description": "设备型号"
+                },
+                "deviceName": {
+                  "type": "string",
+                  "description": "设备名称"
+                },
+                "deviceNum": {
+                  "type": "string",
+                  "description": "设备编号"
+                },
+                "deviceStatus": {
+                  "type": "string",
+                  "description": "设备状态"
+                },
+                "deviceType": {
+                  "type": "string",
+                  "description": "设备类型"
+                },
+                "factoryDate": {
+                  "type": "string",
+                  "format": "date",
+                  "description": "出厂日期"
+                },
+                "factoryNum": {
+                  "type": "string",
+                  "description": "出厂编号"
+                },
+                "id": {
+                  "type": "string",
+                  "example": 0,
+                  "description": "ID"
+                },
+                "manufacturer": {
+                  "type": "string",
+                  "description": "制造厂家"
+                },
+                "remark": {
+                  "type": "string",
+                  "description": "备注"
+                },
+                "tenantId": {
+                  "type": "integer",
+                  "format": "int64",
+                  "description": "租户ID"
+                },
+                "updateAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "更新时间"
+                },
+                "updateBy": {
+                  "type": "string",
+                  "description": "更新者ID"
+                }
+              },
+              "title": "设备台账",
+              "ref": "#/definitions/设备台账"
+            }
+          },
+          "msg": {
+            "type": "string",
+            "description": "错误消息，没有错误返回空串"
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1000,
+            "description": "总记录数"
+          }
+        },
+        "title": "MvcListResult«设备台账»",
+        "ref": "#/definitions/MvcListResult«设备台账»"
+      }
+    },
+    "responseSuccess": "",
+    "responseError": "",
+    "publishStatus": false,
+    "apiStatus": false,
+    "onlineStatus": false,
+    "type": "system",
+    "model": {
+      "id": "",
+      "name": ""
+    },
+    "params": [],
+    "function": "",
+    "id": "1427196538118377474",
+    "createAt": "2021-08-16 17:55:37",
+    "updateAt": "2021-08-16 17:12:25"
+  },
+  {
+    "interfaceName": "登录",
+    "serverName": "设备管理-设备台账",
+    "interfaceUrl": "/nancal-app-system/login",
+    "method": "POST",
+    "groupId": "1427201476868243458",
+    "isCross": true,
+    "version": "1.0",
+    "requestType": "application/json",
+    "responseType": "",
+    "description": "密码需要MD5加密传输；\ntoken放到请求头的<span class=\"colour\" style=\"color:rgb(80, 80, 80)\">Authorization，</span>格式是token_type + 空格 + token，例如 ：\n<span class=\"colour\" style=\"color:rgb(80, 80, 80)\">Authorization：</span><span class=\"colour\" style=\"color:rgb(4, 81, 165)\">bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjQxMjQ3MjQ5NDA1MDU0OTc2LCJ1c2VybmFtZSI6ImFkb</span>\n\n<br>\n成功示例：\n<span class=\"colour\" style=\"color:rgb(0, 0, 0)\">{</span>\n<span class=\"colour\" style=\"color:rgb(0, 0, 0)\">    </span><span class=\"colour\" style=\"color:rgb(163, 21, 21)\">\"token_type\"</span><span class=\"colour\" style=\"color:rgb(0, 0, 0)\">: </span><span class=\"colour\" style=\"color:rgb(4, 81, 165)\">\"bearer\"</span><span class=\"colour\" style=\"color:rgb(0, 0, 0)\">,</span>\n<span class=\"colour\" style=\"color:rgb(0, 0, 0)\">    </span><span class=\"colour\" style=\"color:rgb(163, 21, 21)\">\"token\"</span><span class=\"colour\" style=\"color:rgb(0, 0, 0)\">: </span><span class=\"colour\" style=\"color:rgb(4, 81, 165)\">\"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjQxMjQ3MjQ5NDA1MDU0OTc2LCJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjE1Nzc5MTUwLCJuYmYiOjE2MTU3NzkxNTAsImV4cCI6MTYxNTgyMjM1MH0.VVoZYX6haJh34Vm7g6hZXkDya6jyxHp7STwXlBHPc1g\"</span>\n<span class=\"colour\" style=\"color:rgb(0, 0, 0)\">}</span>\n\n<span class=\"colour\" style=\"color:rgb(0, 0, 0)\">失败示例：</span>\n<span class=\"colour\" style=\"color:rgb(0, 0, 0)\">{</span>\n<span class=\"colour\" style=\"color:rgb(0, 0, 0)\">    </span><span class=\"colour\" style=\"color:rgb(163, 21, 21)\">\"msg\"</span><span class=\"colour\" style=\"color:rgb(0, 0, 0)\">: </span><span class=\"colour\" style=\"color:rgb(4, 81, 165)\">\"请输入正确的登录名或密码\"</span><span class=\"colour\" style=\"color:rgb(0, 0, 0)\">,</span>\n<span class=\"colour\" style=\"color:rgb(0, 0, 0)\">    </span><span class=\"colour\" style=\"color:rgb(163, 21, 21)\">\"code\"</span><span class=\"colour\" style=\"color:rgb(0, 0, 0)\">: </span><span class=\"colour\" style=\"color:rgb(9, 134, 88)\">-1</span><span class=\"colour\" style=\"color:rgb(0, 0, 0)\">,</span>\n<span class=\"colour\" style=\"color:rgb(0, 0, 0)\">    </span><span class=\"colour\" style=\"color:rgb(163, 21, 21)\">\"data\"</span><span class=\"colour\" style=\"color:rgb(0, 0, 0)\">: </span><span class=\"colour\" style=\"color:rgb(4, 81, 165)\">\"unauthorized\"</span>\n<span class=\"colour\" style=\"color:rgb(0, 0, 0)\">}</span>",
+    "requestBody": {
+      "root": {
+        "type": "object",
+        "title": "title",
+        "properties": {
+          "username": {
+            "type": "string",
+            "description": " 账号/手机号"
+          },
+          "password": {
+            "type": "string",
+            "description": "密码，MD5加密"
+          }
+        },
+        "required": [
+          "username",
+          "password"
+        ]
+      }
+    },
+    "requestQuery": [],
+    "requestHeader": [],
+    "responseBody": {
+      "root": {
+        "type": "object",
+        "title": "title",
+        "properties": {
+          "token_type": {
+            "type": "string",
+            "description": "token类型"
+          },
+          "token": {
+            "type": "string",
+            "description": "token值"
+          }
+        },
+        "required": [
+          "token_type",
+          "token"
+        ]
+      }
+    },
+    "responseSuccess": "",
+    "responseError": "",
+    "publishStatus": false,
+    "apiStatus": false,
+    "onlineStatus": false,
+    "type": "system",
+    "model": {
+      "id": "",
+      "name": ""
+    },
+    "params": [],
+    "function": "",
+    "id": "1429706068049780737",
+    "createAt": "2021-08-23 15:27:31",
+    "updateAt": "2021-08-24 15:36:18"
+  },
+  {
+    "interfaceName": "设备状态",
+    "serverName": "设备管理-设备台账",
+    "interfaceUrl": "/nancal-app-system/dict/device_status",
+    "method": "GET",
+    "groupId": "1427201476868243458",
+    "isCross": true,
+    "version": "1.0",
+    "requestType": "",
+    "responseType": "",
+    "description": "",
+    "requestBody": {},
+    "requestQuery": [],
+    "requestHeader": [],
+    "responseBody": {
+      "root": {
+        "schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "number",
+            "description": "状态码"
+          },
+          "msg": {
+            "type": "null",
+            "description": "信息"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "dictName": {
+                  "type": "string",
+                  "description": "字典名称"
+                },
+                "dictValue": {
+                  "type": "string",
+                  "description": "字典值"
+                }
+              },
+              "required": [
+                "dictName",
+                "dictValue"
+              ]
+            },
+            "description": "数据"
+          }
+        }
+      }
+    },
+    "responseSuccess": "",
+    "responseError": "",
+    "publishStatus": false,
+    "apiStatus": false,
+    "onlineStatus": false,
+    "type": "system",
+    "model": {
+      "id": "",
+      "name": ""
+    },
+    "params": [],
+    "function": "",
+    "id": "1430065850058768385",
+    "createAt": "2021-08-24 15:17:38",
+    "updateAt": "2021-08-24 15:26:48"
+  },
+  {
+    "interfaceName": "设备类型",
+    "serverName": "设备管理-设备台账",
+    "interfaceUrl": "/nancal-app-system/dict/device_type",
+    "method": "GET",
+    "groupId": "1427201476868243458",
+    "isCross": true,
+    "version": "1.0",
+    "requestType": "",
+    "responseType": "",
+    "description": "",
+    "requestBody": {},
+    "requestQuery": [],
+    "requestHeader": [],
+    "responseBody": {
+      "root": {
+        "schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "number",
+            "description": "状态码"
+          },
+          "msg": {
+            "type": "null",
+            "description": "信息"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "dictName": {
+                  "type": "string",
+                  "description": "字典名称"
+                },
+                "dictValue": {
+                  "type": "string",
+                  "description": "字典值"
+                }
+              },
+              "required": [
+                "dictName",
+                "dictValue"
+              ]
+            },
+            "description": "数据"
+          }
+        }
+      }
+    },
+    "responseSuccess": "",
+    "responseError": "",
+    "publishStatus": false,
+    "apiStatus": false,
+    "onlineStatus": false,
+    "type": "system",
+    "model": {
+      "id": "",
+      "name": "device"
+    },
+    "params": [],
+    "function": "",
+    "id": "1430065850071351298",
+    "createAt": "2021-08-24 15:28:54",
+    "updateAt": "2021-08-24 15:14:02"
+  },
+  {
+    "interfaceName": "获取菜单树",
+    "serverName": "设备管理-设备台账",
+    "interfaceUrl": "/nancal-app-system/sysMenu/tree",
+    "method": "GET",
+    "groupId": "1427201476868243458",
+    "isCross": true,
+    "version": "1.0",
+    "requestType": "",
+    "responseType": "",
+    "description": "<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">{</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">    </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"code\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">0</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">    </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"msg\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">**null**</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">    </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"data\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: [</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        {</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"id\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"46025611226910727\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"menuName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"首页\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"menuUrl\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"home\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"menuIcon\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"el-icon-s-home\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"sort\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">1</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"status\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">0</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"parentId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"0\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"children\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: [],</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"permissions\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: [</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">                {</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">                    </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"id\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"46299896877158400\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">                    </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"permissionName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"测试首页权限\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">                    </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"menuId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">46025611226910727</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">                    </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"permissionCode\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">**null**</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">                    </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"url\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"[http://saas-dev.nancal.com/mes-web/#/permission](http://saas-dev.nancal.com/mes-web/#/permission)\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">                    </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"remark\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"仅首页可以看\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">                    </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"status\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">**null**</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">                    </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"flag\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"permission\"</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">                }</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            ],</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"flag\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"menu\"</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        }</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">    ]</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">}</span>",
+    "requestBody": {},
+    "requestQuery": [],
+    "requestHeader": [],
+    "responseBody": {
+      "root": {
+        "schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "number",
+            "description": "状态码"
+          },
+          "msg": {
+            "type": "string",
+            "description": "信息"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "menuName": {
+                  "type": "string",
+                  "description": "菜单名称"
+                },
+                "menuUrl": {
+                  "type": "string",
+                  "description": "菜单页面地址"
+                },
+                "menuIcon": {
+                  "type": "string",
+                  "description": "菜单图标"
+                },
+                "sort": {
+                  "type": "number",
+                  "description": "菜单排序"
+                },
+                "status": {
+                  "type": "number",
+                  "description": "状态：0-正常  1-禁用"
+                },
+                "parentId": {
+                  "type": "string",
+                  "description": "父级ID"
+                },
+                "children": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "子菜单"
+                },
+                "permissions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "permissionName": {
+                        "type": "string",
+                        "description": "权限名称"
+                      },
+                      "menuId": {
+                        "type": "number",
+                        "description": "所属菜单ID"
+                      },
+                      "permissionUrl": {
+                        "type": "null",
+                        "description": "权限标识"
+                      },
+                      "pageUrl": {
+                        "type": "string",
+                        "description": "路由地址"
+                      },
+                      "remark": {
+                        "type": "string",
+                        "description": "备注"
+                      },
+                      "status": {
+                        "type": "null",
+                        "description": "状态；0-启用；1-禁用"
+                      },
+                      "id": "Document{{type=string, description=权限ID}}"
+                    },
+                    "required": [
+                      "id",
+                      "permissionName",
+                      "menuId",
+                      "permissionUrl",
+                      "pageUrl",
+                      "remark",
+                      "status"
+                    ]
+                  },
+                  "description": "权限按钮"
+                },
+                "id": "Document{{type=string, description=菜单ID }}"
+              },
+              "required": [
+                "id",
+                "menuName",
+                "menuUrl",
+                "menuIcon",
+                "sort",
+                "status",
+                "parentId",
+                "children",
+                "permissions"
+              ]
+            },
+            "description": "数据"
+          }
+        }
+      }
+    },
+    "responseSuccess": "",
+    "responseError": "",
+    "publishStatus": false,
+    "apiStatus": false,
+    "onlineStatus": false,
+    "type": "system",
+    "model": {
+      "id": "",
+      "name": ""
+    },
+    "params": [],
+    "function": "",
+    "id": "1430721787875110913",
+    "createAt": "2021-08-26 10:44:57",
+    "updateAt": "2021-08-26 13:45:35"
+  }
+]

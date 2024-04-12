@@ -1,0 +1,281 @@
+[
+    {
+        "interfaceName": "test查询",
+        "serverName": "",
+        "interfaceUrl": "/nancal-app-facility/tyre/list",
+        "method": "POST",
+        "groupId": "",
+        "isCross": true,
+        "version": "",
+        "requestType": "application/json",
+        "responseType": "application/json",
+        "description": "",
+        "requestBody": {
+            "root": {
+                "ref": "#/definitions/",
+                "type": "object",
+                "title": "",
+                "required": [
+                    "pageNo",
+                    "pageSize"
+                ],
+                "properties": {
+                    "pageNo": {
+                        "format": "int32",
+                        "description": "分页页码",
+                        "type": "integer",
+                        "example": ""
+                    },
+                    "pageSize": {
+                        "format": "int32",
+                        "description": "分页大小",
+                        "type": "integer",
+                        "example": ""
+                    }
+                }
+            }
+        },
+        "requestQuery": [],
+        "requestHeader": [],
+        "responseBody": {
+            "root": {
+                "ref": "#/definitions/",
+                "type": "object",
+                "title": "",
+                "properties": {
+                    "msg": {
+                        "description": "错误消息，没有错误返回空串",
+                        "type": "string"
+                    },
+                    "total": {
+                        "format": "int64",
+                        "description": "总记录数",
+                        "type": "integer",
+                        "example": ""
+                    },
+                    "code": {
+                        "format": "int32",
+                        "description": "响应码",
+                        "type": "integer",
+                        "example": "成功返回0"
+                    },
+                    "data": {
+                        "description": "列表",
+                        "type": "array",
+                        "items": {
+                            "ref": "#/definitions/",
+                            "type": "object",
+                            "title": "",
+                            "properties": {
+                                "feild_0_1": {
+                                    "type": "string"
+                                },
+                                "feild_0_2": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "responseSuccess": "",
+        "responseError": "",
+        "publishStatus": false,
+        "apiStatus": false,
+        "onlineStatus": false,
+        "type": "custom",
+        "model": {
+            "id": "61616f3a90a2c579a125775e",
+            "name": "test"
+        },
+        "params": [
+            {
+                "name": "",
+                "code": "",
+                "type": "string",
+                "operator": "等于",
+                "operatorList": [
+                    {
+                        "label": "=",
+                        "value": "等于"
+                    },
+                    {
+                        "label": "!=",
+                        "value": "不等于"
+                    }
+                ]
+            }
+        ],
+        "function": "",
+        "id": "61616f3a90a2c579a1257761",
+        "createAt": "2021-10-09 18:30:18"
+    },
+    {
+        "interfaceName": "test详情",
+        "serverName": "",
+        "interfaceUrl": "/custom-model/12121212/detail/{id}",
+        "method": "POST",
+        "groupId": "",
+        "isCross": true,
+        "version": "",
+        "requestType": "application/json",
+        "responseType": "application/json",
+        "description": "",
+        "requestBody": {},
+        "requestQuery": [],
+        "requestHeader": [],
+        "responseBody": {
+            "root": {
+                "ref": "#/definitions/",
+                "type": "object",
+                "title": "",
+                "properties": {
+                    "msg": {
+                        "description": "错误消息，没有错误返回空串",
+                        "type": "string"
+                    },
+                    "code": {
+                        "format": "int32",
+                        "description": "响应码",
+                        "type": "integer",
+                        "example": "成功返回0"
+                    },
+                    "data": {
+                        "ref": "#/definitions/",
+                        "type": "object",
+                        "title": "",
+                        "properties": {
+                            "feild_0_1": {
+                                "type": "string"
+                            },
+                            "feild_0_2": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "responseSuccess": "",
+        "responseError": "",
+        "publishStatus": false,
+        "apiStatus": false,
+        "onlineStatus": false,
+        "type": "custom",
+        "model": {
+            "id": "61616f3a90a2c579a125775e",
+            "name": "test"
+        },
+        "params": [],
+        "function": "",
+        "id": "61616f3a90a2c579a1257762",
+        "createAt": "2021-10-09 18:30:18"
+    },
+    {
+        "interfaceName": "query",
+        "serverName": "",
+        "interfaceUrl": "query/{id}",
+        "method": "POST",
+        "groupId": "",
+        "isCross": true,
+        "version": "",
+        "requestType": "",
+        "responseType": "",
+        "description": "",
+        "requestBody": {
+            "root": {
+                "ref": "#/definitions/",
+                "type": "object",
+                "title": "",
+                "properties": {
+                    "": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "requestQuery": [],
+        "requestHeader": [],
+        "responseBody": {
+            "root": {
+                "ref": "#/definitions/",
+                "type": "object",
+                "title": "",
+                "properties": {
+                    "msg": {
+                        "description": "错误消息，没有错误返回空串",
+                        "type": "string"
+                    },
+                    "total": {
+                        "format": "int64",
+                        "description": "总记录数",
+                        "type": "integer",
+                        "example": ""
+                    },
+                    "code": {
+                        "format": "int32",
+                        "description": "响应码",
+                        "type": "integer",
+                        "example": "成功返回0"
+                    },
+                    "data": {
+                        "description": "列表",
+                        "type": "array",
+                        "items": {
+                            "ref": "#/definitions/",
+                            "type": "object",
+                            "title": "",
+                            "properties": {
+                                "feild_0_1": {
+                                    "type": "string"
+                                },
+                                "feild_0_3": {
+                                    "type": "string"
+                                },
+                                "feild_0_2": {
+                                    "type": "string"
+                                },
+                                "feild_0_4": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "responseSuccess": "",
+        "responseError": "",
+        "publishStatus": false,
+        "apiStatus": false,
+        "onlineStatus": false,
+        "type": "diy",
+        "model": {
+            "id": "616169cf90a2c579a1257658",
+            "name": "tyre"
+        },
+        "params": [
+            {
+                "name": "",
+                "code": "",
+                "type": "string",
+                "operator": "等于",
+                "operatorList": [
+                    {
+                        "label": "=",
+                        "value": "等于"
+                    },
+                    {
+                        "label": "!=",
+                        "value": "不等于"
+                    }
+                ]
+            }
+        ],
+        "function": "查询",
+        "id": "6163cf052127e2738c3d5ee5",
+        "createAt": "2021-10-11 13:43:33"
+    }
+]

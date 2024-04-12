@@ -1,0 +1,78 @@
+[
+    {
+        "name": "tyre",
+        "code": "tyre",
+        "remark": "",
+        "properties": {
+            "feild_0_1": {
+                "type": "string"
+            },
+            "feild_0_2": {
+                "type": "string"
+            },
+            "feild_0_3": {
+                "type": "string"
+            },
+            "feild_0_4": {
+                "type": "string"
+            }
+        },
+        "propertiesList": [
+            {
+                "name": "feild_0_1",
+                "code": "",
+                "type": "string",
+                "children": []
+            },
+            {
+                "name": "feild_0_2",
+                "code": "",
+                "type": "string",
+                "children": []
+            },
+            {
+                "name": "feild_0_3",
+                "code": "",
+                "type": "string",
+                "children": []
+            },
+            {
+                "name": "feild_0_4",
+                "code": "",
+                "type": "string",
+                "children": []
+            }
+        ],
+        "id": "616169cf90a2c579a1257658",
+        "createAt": "2021-10-09 18:07:11"
+    },
+    {
+        "name": "test",
+        "code": "12121212",
+        "remark": "",
+        "properties": {
+            "feild_0_1": {
+                "type": "string"
+            },
+            "feild_0_2": {
+                "type": "string"
+            }
+        },
+        "propertiesList": [
+            {
+                "name": "feild_0_1",
+                "code": "",
+                "type": "string",
+                "children": []
+            },
+            {
+                "name": "feild_0_2",
+                "code": "",
+                "type": "string",
+                "children": []
+            }
+        ],
+        "id": "61616f3a90a2c579a125775e",
+        "createAt": "2021-10-09 18:30:18"
+    }
+]
